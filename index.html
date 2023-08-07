@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <div class="title"><title>Bank Management System</title></div>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      animation: gradientAnimation 10s ease infinite;
+      background-image: url("dollar.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position:center;
+    }
+    
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #6e5a5a;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    label,
+    input[type="text"],
+    input[type="number"] {
+      color: #0f0f0f;
+    }
+    
+    button {
+      background-color: #1a202c;
+    }
+    
+    h2 {
+      font-weight: bold;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #0c0c0c;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bank Management System</h1>
+  
+  <div class="container">
+    <h2>Query Balance</h2>
+    <form id="balanceForm">
+      <label for="accountNumber" class="text-gray-700">Account Number:</label>
+      <input type="text" id="accountNumber" name="accountNumber" required
+             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Query Balance
+      </button>
+    </form>
+    <p id="balanceResult"></p>
+  </div>
+  
+  <div class="container">
+    <h2>Transfer Money</h2>
+    <form id="transferForm">
+      <label for="fromAccount" class="text-gray-700">From Account:</label>
+      <input type="text" id="fromAccount" name="fromAccount" required
+             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+      
+      <label for="toAccount" class="text-gray-700">To Account:</label>
+      <input type="text" id="toAccount" name="toAccount" required
+             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+      
+      <label for="amount" class="text-gray-700">Amount:</label>
+      <input type="number" id="amount" name="amount" required
+             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+      
+      <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        Transfer
+      </button>
+    </form>
+    <p id="transferResult"></p>
+  </div>
+
+  <footer>
+    <p>© 2023 Developed by Chris Sanare</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
